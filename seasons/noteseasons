@@ -8,7 +8,7 @@ Benifits of Class Components over Functional Components-
 3.  Lifecycle- easier to do things when our app first starts
 
 //To understand the differences between Class Components and Functional Components
-/* if the user's location is northern hemisphere and between october and march OR south and between match and october THEN chilly
+-if the user's location is northern hemisphere and between october and march OR south and between match and october THEN chilly
 but if northern and between march and october OR south and between october and march THEN hit the BEACH
 //TASKS-
 //get physical location
