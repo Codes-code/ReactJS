@@ -1,10 +1,10 @@
-//failed, fix later, maybe?
+//for gender generation alternatively
 
 var a="Male"; var b="Female";
 
-const genderer=()=> {
+const gender=()=> {
     var temp=a; a=b; b=temp; 
     return a;
 };
 
-export default genderer; 
+export default gender; 

@@ -1,3 +1,5 @@
+/*to render the whole card that has approval and rejection button. with space for 
+something in the top. for eg. space for comments, to be rejected or approved */
 import React from 'react';
 import Faker from 'faker';
 

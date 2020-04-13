@@ -1,3 +1,4 @@
+/*to render the comment with avatar, date, text, name */
 import React from 'react';
 
 const CommentDetail = (props) => {

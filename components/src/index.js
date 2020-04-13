@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CommentDetail from './CommentDetail';
 import ApprovalCard from './ApprovalCard';
-import genderer from './Gender'; //un-used
+import gender from './Gender'; //un-used
 import Faker from 'faker';
 
 // here, we are sendin this information through props
@@ -23,6 +23,10 @@ const App=()=> {
                 }
             />
 
+            {/* i've written the commentdetail component directly in the approvalcard component, and now it is going to be passed
+            in the props as it's children. when using children you cannot choose to show let's say 1 particular child,
+             or the children in any particular order. whenever you'll call props.children , all the children will be 
+             rendered in the same order */}
             <ApprovalCard> 
                 <CommentDetail 
                     author="KailashK" 
@@ -41,13 +45,16 @@ const App=()=> {
 
             </ApprovalCard>
             
+            {/* i've passed Commentdetail as one of the custom props of ApprovalCard. with this technique, i can pass 
+            any and all components i want in the ApprovalCard, and then later simply choose by calling props.whatever 
+             and select which i wanna render isntead of having to render all when using props.children */}
             <ApprovalCard 
                 approvalMessegeDetail={
-                    <CommentDetail  
-                        author="B.B. King" 
+                    <CommentDetail 
+                        author="John Mayer" 
                         sex={gender()} 
-                        dateandtime="Today at 3AM" 
-                        text="bamboozled" 
+                        dateandtime="Monday at 5PM" 
+                        text="Goddammitbruh" 
                         avatar={Faker.image.avatar()}
                     />
                 }
@@ -61,28 +68,23 @@ const App=()=> {
                     />  
                 }
             />        
-
-            <ApprovalCard 
-                approvalMessegeDetail={
-                    <CommentDetail 
-                        author="John Mayer" 
-                        sex={gender()} 
-                        dateandtime="Monday at 5PM" 
-                        text="Goddammitbruh" 
-                        avatar={Faker.image.avatar()}
-                    /> 
-                }
-            />
-
+            
             <ApprovalCard
-                approvalMessegeDetail="Do you want to Continue?"            
+                approvalMessegeDetail="Are you sure?"            
             />
+            
+            {/* All of this is passes as a children, and can be accesed by props.children
+            NOW THIS METHOD ALLOWS ME TO PASS JSX THROUGH PROPS, WHICH I CAN'T PASS THROUGH NORMAL PROPS.  */}                        
+            <ApprovalCard>
+                <div>
+                    <h3>Warning</h3>
+                    Do you want to Continue?  
+                </div>          
+            </ApprovalCard>
+
         </div>
     );
 };
-
-//for gender generation alternatively
-var b="Male"; var a="Female"; const gender=()=> {var temp=a; a=b; b=temp; return a;};
 
 
 //ReactDOM.render(*Render what, render where*)
