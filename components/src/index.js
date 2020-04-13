@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CommentDetail from './CommentDetail';
 import ApprovalCard from './ApprovalCard';
-import gender from './Gender'; //un-used
+import Gender from './Gender'; //un-used
 import Faker from 'faker';
 
 // here, we are sendin this information through props
@@ -15,7 +15,7 @@ const App=()=> {
                 approvalMessegeDetail={
                     <CommentDetail 
                         author="JBonamassa" 
-                        sex={gender()} 
+                        sex={Gender()} 
                         dateandtime="Today at 4PM" 
                         text="such shock, much wow" 
                         avatar={Faker.image.avatar()}
@@ -30,14 +30,14 @@ const App=()=> {
             <ApprovalCard> 
                 <CommentDetail 
                     author="KailashK" 
-                    sex={gender()} 
+                    sex={Gender()} 
                     dateandtime="Today at 12PM" 
                     text="Love it alot" 
                     avatar={Faker.image.avatar()}
                 />
                 <CommentDetail  
                     author="B.B. Ding Ding" 
-                    sex={gender()} 
+                    sex={Gender()} 
                     dateandtime="Today at 6AM" 
                     text="dobad" 
                     avatar={Faker.image.avatar()}
@@ -52,7 +52,7 @@ const App=()=> {
                 approvalMessegeDetail={
                     <CommentDetail 
                         author="John Mayer" 
-                        sex={gender()} 
+                        sex={Gender()} 
                         dateandtime="Monday at 5PM" 
                         text="Goddammitbruh" 
                         avatar={Faker.image.avatar()}
@@ -61,7 +61,7 @@ const App=()=> {
                 approvalMessegeDetail_2={
                     <CommentDetail 
                         author="John Die" 
-                        sex={gender()} 
+                        sex={Gender()} 
                         dateandtime="Tuesday at 7PM" 
                         text="Goddah" 
                         avatar={Faker.image.avatar()}

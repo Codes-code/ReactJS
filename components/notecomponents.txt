@@ -1,0 +1,21 @@
+
+Faker.js -using faker for fake images and info and stuff, so i don't need to worry about downloading and fabricating info. 
+https://github.com/marak/Faker.js/
+
+
+PROPS (properties)----- props is basically to customize the content between different childs of a parent component. to serve different content 
+to childs. so we can use the same parent component, but still serve dynamic information to the childs. hence no need to 
+copy paste the parent in order to fullfill the dynamic requirement. 
+it's like the parent has certain spaces/ fill-in-the-blanks that have certain tags so that we can uniqely refer to these spaces, 
+and when the parent is used as a child in a certain position, on a certain page, then props brings in the very custom and personal
+ information to that specific child usage and then using the predefined ID's alocated to the spaces in the child, the props 
+ can fill in the information. great job you props and childs. so props is like the bracket used in functions. we can pass info in that. 
+
+ state can change, but prop can't change. this.setstate is possible, but this.setprops is not possible. props is immutable. 
+
+ Redux takes like API information, and puts it into props. it's unchangable. 
+
+
+ we write the actual properties (props) when we are calling the function (component), and we mention stuff through custom classnames.
+  and when we then go to the actual called function (component) then we mention the props inside the first line bracket before =>, 
+  and then we use the actual specific custom classname where we need to place the info. for eg, {props.customclassname}

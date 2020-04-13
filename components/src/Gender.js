@@ -2,9 +2,9 @@
 
 var a="Male"; var b="Female";
 
-const gender=()=> {
+const Gender=()=> {
     var temp=a; a=b; b=temp; 
     return a;
 };
 
-export default gender; 
+export default Gender; 
