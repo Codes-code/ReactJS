@@ -43,6 +43,13 @@ COMPONENTS------
 Components are function or Class that render html using jsx, and handle user feedback
 Functional Components to be used for simple content, and Class Components to be used for everything else. 
 
+in function components the function is delcared as ----  const App = () => {return (content);}             ------i call this component function
+in class components, the class is declared as ---- class App extends React.Component{render(){return();}}  ------i call this component class
+in class components, the functions inside are declared as ---- constructor(props) {} //basically like java ------i call this simple function (comes in class)
+
+
+
+
 Benifits of Class Components over Functional Components- 
 1. Easier code organising (helper funcitons can be cumbersome in function based components)
 2. Can use 'state' system. easier to handle user input and update how our app looks based on input. 

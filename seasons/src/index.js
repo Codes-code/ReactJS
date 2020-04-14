@@ -14,7 +14,7 @@ import SeasonDisplay from './SeasonDisplay';
 
     window.navigator.geolocation.getCurrentPosition(
         position=>console.log(position),
-        err=>console.log(err),
+        err=>console.log(err)
     );
 
     var pos=position.coords.latitude;
@@ -27,13 +27,27 @@ import SeasonDisplay from './SeasonDisplay';
 
 
 class App extends React.Component {
-    render() {
+
+    /* constructor - very first function to be called any time an instance of this app 
+    is created. any time we create a new instance of this app component 
+    and show it on the screen, constructor funtion will be automatically called first */
+    //good way to initialize state object
+    constructor(props) {
+        super(props); //reference to parents constructor with props
+        this.state={lat:null };// now this can be referenced anywhere inside the class. Basically like a JAVA Object
         window.navigator.geolocation.getCurrentPosition(
-            position=>console.log(position),err=>console.log(err)
+            position=>{this.setState.lat({position})},
+            err=>console.log(err)
         );
 
+    }
+
+    //every class has to have render method (render function)
+    //render method gets recalled alot of times. so don't declare stuff in here. use other methods for most stuff. 
+    render() {
+
         return (
-            <div>Latitude is- </div>
+            <div>Latitude is- {this.state.lat}</div>
         )
     }
 }
