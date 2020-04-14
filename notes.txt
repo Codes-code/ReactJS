@@ -48,10 +48,12 @@ Benifits of Class Components over Functional Components-
 2. Can use 'state' system. easier to handle user input and update how our app looks based on input. 
 3.  Lifecycle- easier to do things when our app first starts
 
-//To understand the differences between Class Components and Functional Components
-/* if the user's location is northern hemisphere and between october and march OR south and between match and october THEN chilly
-but if northern and between march and october OR south and between october and march THEN hit the BEACH
-//TASKS-
-//get physical location
-//get current month
-//change styling and text based on those parameters
+STATE- (in class Components) - 
+--Don't confuse props with state.
+--State is a JS object that contains data relevant to a Components
+--Updating state causes the Component to instantly Re-render
+--State has to be Initialized when a Component is Created. 
+--STATE CAN ONLY BE UPDATED USING FUNCTION 'setState' 
+
+
+
