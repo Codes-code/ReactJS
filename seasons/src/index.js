@@ -34,10 +34,11 @@ class App extends React.Component {
     //good way to initialize state object
     constructor(props) {
         super(props); //reference to parents constructor with props
-        this.state={lat:null };// now this can be referenced anywhere inside the class. Basically like a JAVA Object
+        this.state={lat:null, errMessage:null};// now this can be referenced anywhere inside the class. Basically like a JAVA Object. we only use this.state once. then we use this.setState
         window.navigator.geolocation.getCurrentPosition(
-            position=>{this.setState.lat({position})},
-            err=>console.log(err)
+            position=>{this.setState({lat: position.coords.latitude})}, //as soon as setState is called, and and state is changed, the render method will be called again. 
+            //err=>{console.log(err)},
+            err=>{this.setState({errMessage:err.message})}
         );
 
     }
@@ -46,9 +47,21 @@ class App extends React.Component {
     //render method gets recalled alot of times. so don't declare stuff in here. use other methods for most stuff. 
     render() {
 
-        return (
-            <div>Latitude is- {this.state.lat}</div>
-        )
+        if(this.state.errMessage && this.state.lat){
+        return <div>Latitude is: {this.state.lat}, but this error popped up- {this.state.errMessage}</div>
+        }
+
+        if(this.state.lat){
+        return <div>Latitude is: {this.state.lat}</div>
+        }
+
+        if(this.state.errMessage && !this.state.lat){
+        return <div>Oops, Something went wrong. Error- {this.state.errMessage}</div>
+        }
+        
+        return <div>Loading...</div>
+        
+        
     }
 }
 
