@@ -33,25 +33,40 @@ class App extends React.Component {
     and show it on the screen, constructor funtion will be automatically called first */
     //good way to initialize state object
     constructor(props) {
-        super(props); //reference to parents constructor with props
+
+        
+        super(props);//reference to parents constructor with props
 
         // now this can be referenced anywhere inside the class. Basically like a JAVA Object. we only use this.state once. then we use this.setState
         this.state={lat:null, errMessage:null};// 1st way to initialize state. 
+    }
+
+    //2nd way to initialize state. this below is equal to all of the constructor's job for now. 
+    //state={lat:null, errMessage:null};
+
+    //constructor vs componentDidMount--- react devs say best practice is to do data loading in this and not constructor. reason being it looks ByteLengthQueuingStrategy, easy to understand
+    componentDidMount() {
+
+        console.log("Component - App - initialized");
+
         window.navigator.geolocation.getCurrentPosition(
             position=>{this.setState({lat: position.coords.latitude})}, //as soon as setState is called, and and state is changed, the render method will be called again. 
-            //err=>{console.log(err)},
-            err=>{this.setState({errMessage:err.message})}
-        );
-
+            err=>{this.setState({errMessage:err.message})}        
+        );             
     }
 
-    componentDidMount() {
-        console.log("Component - App - initialized");                
-    }
-
+    //will be used when we wanna for eg. make a network request every single time user clicks, or every single time user does something and state is updated or the component is rerendered. 
     componentDidUpdate() {
-        console.log("Component - App - updated")
+
+        console.log("Component - App - updated");
+
     }
+
+    componentWillUnmount() {
+
+        console.log("Component - App - UnMounted");
+
+    }    
 
     //every class has to have render method (render function)
     //render method gets recalled alot of times. so don't declare stuff in here. use other methods for most stuff. 
@@ -73,7 +88,6 @@ class App extends React.Component {
         
     }
 }
-
 
 ReactDOM.render(
     <App />, 
