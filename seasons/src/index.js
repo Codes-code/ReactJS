@@ -33,8 +33,6 @@ class App extends React.Component {
     and show it on the screen, constructor funtion will be automatically called first */
     //good way to initialize state object
     constructor(props) {
-
-        
         super(props);//reference to parents constructor with props
 
         // now this can be referenced anywhere inside the class. Basically like a JAVA Object. we only use this.state once. then we use this.setState
@@ -72,12 +70,8 @@ class App extends React.Component {
     //render method gets recalled alot of times. so don't declare stuff in here. use other methods for most stuff. 
     render() {
 
-        if(this.state.errMessage && this.state.lat){
-        return <div>Latitude is: {this.state.lat}, but this error popped up- {this.state.errMessage}</div>
-        }
-
-        else if(this.state.lat){
-        return <div>Latitude is: {this.state.lat}</div>
+        if(this.state.lat){
+        return <SeasonDisplay lat={this.state.lat}/>
         }
 
         else if(this.state.errMessage && !this.state.lat){
