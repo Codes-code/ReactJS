@@ -9,7 +9,8 @@ OR south and between october and march THEN hit the BEACH */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
- 
+import Loading from './Loading';
+import Error from './Error'; 
 /*const App = () => { //functional component
 
     window.navigator.geolocation.getCurrentPosition(
@@ -70,15 +71,18 @@ class App extends React.Component {
     //render method gets recalled alot of times. so don't declare stuff in here. use other methods for most stuff. 
     render() {
 
-        if(this.state.lat){
-        return <SeasonDisplay lat={this.state.lat}/>
+        if(this.state.lat ==0){
+            return <div>get the f off the Equator</div>
+        }
+        else if(this.state.lat){
+            return <SeasonDisplay lat={this.state.lat}/>
         }
 
         else if(this.state.errMessage && !this.state.lat){
-        return <div>Oops, Something went wrong. Error- {this.state.errMessage}</div>
+            return <div> <Error errmessage={this.state.errMessage}/> </div>
         }
 
-        else {return <div>Loading...</div>}
+        else {return <div><Loading/></div>}
         
     }
 }

@@ -1,45 +1,41 @@
 import React from 'react';
-import CSS from './SeasonDisplay';
+import './SeasonDisplay.css';
 
 const SeasonConfig = { //object
 
-    Summer: {
+    summer: {
         text: "Let's hit the Beach!",
         iconName: "sun",
-        colour: "yellow"
+        colour: "orange"
     },
 
-    Winter: {
+    winter: {
         text: "Burr, it's Chilly!",
         iconName: "snowflake",
-        colour: "blue"
+        colour: "teal"
     }
 }
 
 const GetSeason = (lat,month) => { 
 
-    var season=null;
-
     if(month>2 && month<9){
-        season=lat>0? 'Summer' : 'Winter';
+        return lat>0? 'summer' : 'winter';
     }
-    else season=lat>0? 'Winter' : 'Summer';
-
-    return season;
+    else return lat>0? 'winter' : 'summer';
 }
 
 const SeasonDisplay = (props) =>{
     
-    const Season=GetSeason(props.lat, new Date().getMonth());
-    const {text, iconName, colour} = SeasonConfig[Season];
+    const SeasonName=GetSeason(props.lat, new Date().getMonth());
+    const {text, iconName, colour} = SeasonConfig[SeasonName];
 
     return (
-        <div>
-            <i className={`icon-left massive ${colour} ${iconName} icon`}></i>
+        <div className={`season-display ${SeasonName}`}>
+            <i className={`icon-left massive loading ${iconName} icon`}></i>
             <h1 className="ui header">{text}</h1>
-            <i className={`icon-right massive ${colour} ${iconName} icon`}></i>
+            <i className={`icon-right massive loading ${iconName} icon`}></i>
         </div>
     )
 }
 
-export default SeasonDisplay; 
+export default SeasonDisplay;
