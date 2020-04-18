@@ -26,7 +26,6 @@ import Error from './Error';
 
 class App extends React.Component {
 
-
     /* constructor - very first function to be called any time an instance of this app 
     is created. any time we create a new instance of this app component 
     and show it on the screen, constructor funtion will be automatically called first */
