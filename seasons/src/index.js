@@ -1,33 +1,31 @@
-//To understand the differences between Class Components and Functional Components
-/* if the user's location is northern hemisphere and between october and march OR south 
+// AIM- To understand the differences between Class Components and Functional Components
+/* Objective-  if the user's location is northern hemisphere and between october and march OR south 
 and between match and october THEN chilly but if northern and between march and october 
 OR south and between october and march THEN hit the BEACH */
-//get physical location
-//get current month
-//change styling and text based on those parameters
+//Goals- get physical location, get current month, change styling and text based on those parameters
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
 import Loading from './Loading';
 import Error from './Error'; 
-/*const App = () => { //functional component
 
-    window.navigator.geolocation.getCurrentPosition(
-        position=>console.log(position),
-        err=>console.log(err)
-    );
+
+
+/*const App = () => { //functional component where we can't redender automatically when we recieve the correct latitude. 
+
+    window.navigator.geolocation.getCurrentPosition( position=>console.log(position), err=>console.log(err) );
 
     var pos=position.coords.latitude;
-    return(
-    <div className="ui icon header">
-        <h3>{{pos}}</h3>
-    </div>
-    );
+
+    return (<div className="ui icon header"> <h3>{{pos}}</h3> </div>);
 }*/
 
 
+
+
 class App extends React.Component {
+
 
     /* constructor - very first function to be called any time an instance of this app 
     is created. any time we create a new instance of this app component 
@@ -40,8 +38,15 @@ class App extends React.Component {
         this.state={lat:null, errMessage:null};// 1st way to initialize state. 
     }
 
+
+
+
     //2nd way to initialize state. this below is equal to all of the constructor's job for now. 
     //state={lat:null, errMessage:null};
+
+
+
+
 
     //constructor vs componentDidMount--- react devs say best practice is to do data loading in this and not constructor. reason being it looks ByteLengthQueuingStrategy, easy to understand
     componentDidMount() {
@@ -54,25 +59,26 @@ class App extends React.Component {
         );             
     }
 
+
+
+
     //will be used when we wanna for eg. make a network request every single time user clicks, or every single time user does something and state is updated or the component is rerendered. 
     componentDidUpdate() {
-
         console.log("Component - App - updated");
-
     }
 
     componentWillUnmount() {
-
         console.log("Component - App - UnMounted");
-
     }    
 
-    //every class has to have render method (render function)
-    //render method gets recalled alot of times. so don't declare stuff in here. use other methods for most stuff. 
-    render() {
+
+
+
+
+    renderContent() {//helper component, to eliminate conditional rendering from render()
 
         if(this.state.lat ==0){
-            return <div>get the f off the Equator</div>
+            return <div><Loading text='Get the f off the Equator'/></div>
         }
         else if(this.state.lat){
             return <SeasonDisplay lat={this.state.lat}/>
@@ -82,10 +88,20 @@ class App extends React.Component {
             return <div> <Error errmessage={this.state.errMessage}/> </div>
         }
 
-        else {return <div><Loading/></div>}
-        
+        else {return <div><Loading text='Waiting for Location'/></div>}
+    }
+
+    render() {
+        return(
+            <div className='border red'>
+                {this.renderContent()}
+            </div>
+        );
     }
 }
+
+
+
 
 ReactDOM.render(
     <App />, 

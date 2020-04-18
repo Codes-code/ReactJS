@@ -16,7 +16,7 @@ const SeasonConfig = { //object
     }
 }
 
-const GetSeason = (lat,month) => { 
+const GetSeason = (lat,month) => {//helper function
 
     if(month>2 && month<9){
         return lat>0? 'summer' : 'winter';
@@ -24,7 +24,7 @@ const GetSeason = (lat,month) => {
     else return lat>0? 'winter' : 'summer';
 }
 
-const SeasonDisplay = (props) =>{
+const SeasonDisplay = (props) =>{//main function
     
     const SeasonName=GetSeason(props.lat, new Date().getMonth());
     const {text, iconName, colour} = SeasonConfig[SeasonName];

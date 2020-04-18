@@ -1,13 +1,18 @@
 import React from 'react';
-import './Error.css';
+import './Items.css';
+import Faker from 'faker';
 
 const Error = (props) => {
     return (
         <div className='error'>
-            <h2>
-                Error has occured <br/>
-                {props.errmessage}
-            </h2>
+            <div className='items'>
+                <h2>
+                    An Error has occured <br/>
+                    {props.errmessage} <br/>
+                    <br/>
+                    <img alt='Oops' src={Faker.image.animals()} />
+                </h2>
+            </div>
         </div>
     );
 }
