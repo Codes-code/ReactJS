@@ -1,4 +1,5 @@
 import React from 'react';
+import Faker from 'faker';
 
 class ImageList extends React.Component {
 
@@ -6,9 +7,16 @@ class ImageList extends React.Component {
 
     render() {
         return (
-            <div className='ImageList'>
-                <h4>ImageList</h4>
-                
+            <div className='ImageList ui segment'>
+                <h4 >ImageList</h4>
+                <img alt='/' src={Faker.image.avatar()} />
+                <img alt='/' src={Faker.image.avatar()} />
+                <img alt='/' src={Faker.image.avatar()} />
+                <img alt='/' src={Faker.image.avatar()} />
+                <img alt='/' src={Faker.image.avatar()} />
+                <img alt='/' src={Faker.image.avatar()} />
+                <img alt='/' src={Faker.image.avatar()} />
+                <img alt='/' src={Faker.image.avatar()} />
             </div>
         );
     }
