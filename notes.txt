@@ -106,3 +106,29 @@ Synchronus/Async----
 To wait to a function to get completed, and to make it synchronus, we put async in front. 
     for eg. we do 'async example(){}' or 'example = async () => {}' 
     we can then put 'const temp = await miniexample.get();' inside it. to wait and feed the result into temp.
+
+
+
+API Call-----
+console.log("form submitted-- "+ searchterm);
+
+        const response = await axios.get( 
+            'https://api.unsplash.com/search/photos',
+            {
+                params: {query: searchterm},
+                headers: {Authorization : 'Client-ID euvETru-dyZew23SFLrejHKJLSXynaR0brs4fDw68Ms'}
+            }
+        );
+
+        this.setState({images: response.data.results});
+        console.log(this.state.images);
+
+    }
+
+
+
+
+
+
+
+    
