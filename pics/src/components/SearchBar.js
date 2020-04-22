@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
 
     onFormSubmit = (e) => {
         e.preventDefault();
-        {this.props.whenSubmit(this.state.term)};//props of the class 'searchbar' , we don't pass it in brackets in the declaration of class. 
+        this.props.whenSubmit(this.state.term);//props of the class 'searchbar' , we don't pass it in brackets in the declaration of class. 
     }
 
 

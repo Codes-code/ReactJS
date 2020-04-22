@@ -12,11 +12,6 @@ class ImageList extends React.Component {
                 <img alt='/' src={Faker.image.avatar()} />
                 <img alt='/' src={Faker.image.avatar()} />
                 <img alt='/' src={Faker.image.avatar()} />
-                <img alt='/' src={Faker.image.avatar()} />
-                <img alt='/' src={Faker.image.avatar()} />
-                <img alt='/' src={Faker.image.avatar()} />
-                <img alt='/' src={Faker.image.avatar()} />
-                <img alt='/' src={Faker.image.avatar()} />
             </div>
         );
     }

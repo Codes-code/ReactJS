@@ -99,3 +99,10 @@ ways to solve it--
       to call the main function itself. so ina sense using 2 function calls. 
       like  onSubmit={(e) => this.onFormSubmit(e)  , this method is also using 
         the arrow function route.
+
+
+
+Synchronus/Async----
+To wait to a function to get completed, and to make it synchronus, we put async in front. 
+    for eg. we do 'async example(){}' or 'example = async () => {}' 
+    we can then put 'const temp = await miniexample.get();' inside it. to wait and feed the result into temp.

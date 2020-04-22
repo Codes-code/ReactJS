@@ -17,9 +17,14 @@ class App extends React.Component {
         the object 'props' of onFormSubmit. which is coming from this.onformsubmit through OnSubmit property 
         of the Form div. So, hence the whole state was refering to the OnSubmit. and now we've forced it to bind
         to our App component, and not the OnSubmit.  */ 
-        
-        this.state={ n:null, counter:0, images:[]};
+
+        this.state={images:[]};
     }
+
+
+    /* To wait to a function to get completed, and to make it synchronus, we put async in front. 
+    for eg. we do 'async example(){}' or 'example = async () => {}' 
+    we can then put 'const temp = await miniexample.get();' inside it. to wait and feed the result into temp. */
 
     async onSearchSubmit(searchterm) {
 
@@ -41,9 +46,10 @@ class App extends React.Component {
     render() {
         return(
             <div>
-                <h1>Cars App</h1>
+                <h2 style={{marginLeft:'70px'}}>Cars App</h2>
                 <div className='SearchBar ui container' style={{marginTop:'10px'}}><SearchBar whenSubmit= {this.onSearchSubmit} /></div>
-                <div className='ImageList'><ImageList /></div>
+                <div className='Text ui container' style={{marginTop:'10px'}}>No. of Images Found: {this.state.images.length}</div>
+                <div className='ImageList ui container' style={{marginTop:'10px'}}><ImageList /></div>
             </div>
         );
     }
