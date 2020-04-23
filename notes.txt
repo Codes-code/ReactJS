@@ -127,8 +127,20 @@ console.log("form submitted-- "+ searchterm);
 
 
 
+ARRAY Mapping--- 
+const a=[1,2,3,4,5]
+//create a new array and put numbers multiplied by 10 in it. 
+3 METHODS-- all completely equal---- all create a new array, and don't disturb the existing array 'a'
 
+1.let b=[];
+for(var i=0; i<a.length; i++){b[i]=a[i]*10;}
 
+2.let c=[];
+for(var i=0; i<a.length; i++){c.push(a[i]*10)}
 
+3. a.map(
+	(num) => {return (num*10)}	
+   )
 
-    
+4. a.map(n=>n*10);
+

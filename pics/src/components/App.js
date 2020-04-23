@@ -45,11 +45,10 @@ class App extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='App ui container' style={{marginTop:'10px'}}>
                 <h2 style={{marginLeft:'70px'}}>Cars App</h2>
-                <div className='SearchBar ui container' style={{marginTop:'10px'}}><SearchBar whenSubmit= {this.onSearchSubmit} /></div>
-                <div className='Text ui container' style={{marginTop:'10px'}}>No. of Images Found: {this.state.images.length}</div>
-                <div className='ImageList ui container' style={{marginTop:'10px'}}><ImageList /></div>
+                <div><SearchBar whenSubmit={this.onSearchSubmit} /></div>
+                <div><ImageList images={this.state.images}/></div>
             </div>
         );
     }

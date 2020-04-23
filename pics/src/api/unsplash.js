@@ -8,4 +8,3 @@ export default axios.create(
         baseURL: 'https://api.unsplash.com'
     }
 )
-
