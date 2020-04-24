@@ -2,7 +2,7 @@ import React from 'react';
 
 class SearchBar extends React.Component {
 
-    state={term:'car'};
+    state={term:'cars'};
     
     onInputClicked = (event) => {
         console.log("input clicked-- "+ event.target.value); 
