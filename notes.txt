@@ -2,8 +2,8 @@ NOTES-
 
 -Ayush Jindal 2020
 
-
-Public-static files. that we don't change, like images, or html file. etc. 
+e don't change, like images, or html file. etc. 
+Public-static files. that w
 src- where we edit and add remove, write code/files. we might delete the default files created by create-react-app in this folder and create our own files. 
 package.json- all the dependancies
 packaage_lock.json- versions of all the dependancies
