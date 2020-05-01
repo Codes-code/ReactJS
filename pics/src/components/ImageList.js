@@ -21,7 +21,9 @@ class ImageList extends React.Component {
                             </div>
             });
     }
+    
     //dame dame, the 
+
     render() {
 
         return (
