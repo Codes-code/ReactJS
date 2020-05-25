@@ -1,28 +1,17 @@
 import React from 'react';
-import SI from './Seperateimages';//din't work, try to make it work. 
 import '../css/ImageList.css';
+import ImageCard from './ImageCard';
+
 class ImageList extends React.Component {
 
-    /*
-    {{
-        for (var i=0; i<this.props.images.length; i++){
-            this.props.images.map(image=>return <div>image</div>)
-        }
-    }}
-    */
-
+  
     seperateimage = (size) => {
 
-        console.log('seperateimage called');
-
         return  this.props.images.map((image) =>  {
-                    return  <div key={image.id}>
-                                <img alt={image.description} src={image.urls.thumb}></img>
-                            </div>
-            });
-    }
+                    return  <ImageCard key={image.id} image={image} />
+            });// we're using 'key' to facilitate 'map' to function properly
+    } 
     
-    //dame dame, the 
 
     render() {
 
@@ -37,4 +26,3 @@ class ImageList extends React.Component {
 }
 
 export default ImageList;
-
