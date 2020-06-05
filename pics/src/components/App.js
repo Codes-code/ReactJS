@@ -46,7 +46,8 @@ class App extends React.Component {
     render() {
         return(
             <div className='App ui container' style={{marginTop:'10px'}}>
-                <h2 style={{marginLeft:'70px'}}>Cars App</h2>
+                <h2>FINDERSCOPE</h2>
+                <h4 style={{marginBottom:'20px'}}>The Image Search Engine</h4>
                 <div><SearchBar whenSubmit={this.onSearchSubmit} /></div>
                 <div><ImageList images={this.state.images}/></div>
             </div>
