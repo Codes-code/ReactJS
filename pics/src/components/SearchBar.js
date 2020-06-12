@@ -2,7 +2,7 @@ import React from 'react';
 
 class SearchBar extends React.Component {
 
-    state={term:'cars'};
+    state={term:''};
     
     onInputClicked = (event) => {
         console.log("input clicked-- "+ event.target.value); 
@@ -38,6 +38,7 @@ class SearchBar extends React.Component {
                         <i className='image icon' onClick={(e)=>this.setState({term: 'Alfa Romeo'})}></i>
                         <input
                             type="text"
+                            placeholder="e.g. Ice Cream or Alfa Romeo"
                             onClick={this.onInputClicked} 
                             value={this.state.term}
                             onChange={(e)=>this.setState({term: e.target.value})}
