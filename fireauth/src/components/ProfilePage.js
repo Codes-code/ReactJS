@@ -25,8 +25,8 @@ const ProfilePage = () => {
                     style={{
                         background: `url(${photoURL || Faker.image.avatar()})  no-repeat center center`,
                         backgroundSize: "cover",
-                        height: "200px",
-                        width: "200px"
+                        height: "150px",
+                        width: "150px"
                     }}
                     className="border border-blue-300"
                 >
@@ -40,16 +40,13 @@ const ProfilePage = () => {
 
             <div className="note-list">
                     <div className="note-list-notes">
-                        <Note />
-                        <Note />
-                        <Note />
-                        <Note />
-                        <Note />
-                        <Note />
-                        <Note />
-                        <Note />
-                        <Note />
-                        <Note />
+                        <Note li="Veggie" number="2"/>
+                        <Note li="Fruit" number="3"/>
+                        <Note li="Project" number="4"/>
+                        <Note li="Item" number="6"/>
+                        <Note li="Phone" number="2"/>
+                        <Note li="Song" number="11"/>
+                        <Note li="Book" number="3"/>
                     </div>    
             </div>
 
@@ -63,5 +60,16 @@ const ProfilePage = () => {
 
 
 }
+
+/*
+                        <Note li="Fruit" number="3"/>
+                        <Note li="Project" number="4"/>
+                        <Note li="Item" number="6"/>
+                        <Note li="Phone" number="2"/>
+                        <Note li="Song" number="11"/>
+                        <Note li="Book" number="3"/>
+
+                        */
+
 
 export default ProfilePage;  

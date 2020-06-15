@@ -5,8 +5,8 @@ function Header(props) {
     return (
         <div>
             <div style={{marginTop: '20px', marginLeft: '28px'}}>
-                <h3 class="ui icon header">
-                <i class={`circular ${props.lockprop} icon`}></i>
+                <h3 className="ui icon header">
+                <i className={`circular ${props.lockprop} icon`}></i>
                 FireAuth
                 </h3>
             </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "@reach/router";
+import {auth} from "../authentication/firebase";
 
 const PasswordReset = () => {
 
@@ -17,9 +18,16 @@ const PasswordReset = () => {
     };
 
     const sendResetEmail = event => {
-        event.preventDefault();
-    };
-
+    event.preventDefault();
+    auth.sendPasswordResetEmail(email).then(() => {
+        console.log("Email Exists");
+        setEmailHasBeenSent(true);
+        setTimeout(() => {setEmailHasBeenSent(false)}, 3000);
+      })
+      .catch(() => {
+        setError("Error resetting password");
+      });
+  };
 
 
     return (
@@ -59,7 +67,10 @@ const PasswordReset = () => {
                         className="mb-3 w-full px-1 py-2"
                     />
 
-                    <button className="w-full bg-blue-400 text-white py-3">
+                    <button 
+                        className="w-full bg-blue-400 text-white py-3"
+                        onClick={sendResetEmail}    
+                    >
                         Send me a reset link
                     </button>
 
